@@ -5,7 +5,6 @@ import { useThemeHook } from '../GlobalComponents/ThemeProvider';
 import { BsCartX} from 'react-icons/bs';
 import { MdPayment } from 'react-icons/md';
 
-
 const Cart = () => {
 
   const [theme] = useThemeHook();
@@ -19,10 +18,10 @@ const Cart = () => {
   } = useCart();
 
   return (
-    <Container className="py-4 mt-5">
+    <Container className="py-4 mt-3">
 
       <h1 className={`${theme? 'text-light': 'text-light-primary'} my-5 text-center`}>
-          {isEmpty? 'Your Cart is Empty' : 'The Cart'}
+          {isEmpty? 'Your Cart is Empty' : 'Shopping Cart'}
       </h1>
 
       <Row className="justify-content-center">
@@ -58,7 +57,7 @@ const Cart = () => {
 
               </tr>
             )
-          })};
+          })}
 
           </tbody>
       </Table>
