@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Container, Navbar, Nav } from "react-bootstrap";
+import { Container, Navbar, Nav, NavbarBrand } from "react-bootstrap";
 import { ThemeContext } from "../GlobalComponents/ThemeProvider";
-import { BiSun, BiMoon, BiCart} from 'react-icons/bi';
+import { BiSun, BiMoon, BiCart, BiHome, BiPlus} from 'react-icons/bi';
 import { Link } from "@reach/router";
 import { useCart } from "react-use-cart";
 
@@ -33,9 +33,12 @@ const Header = () => {
           <Container>
             <Link to="/">
               <Navbar.Brand className={darkMode? 'text-dark-primary': 'text-light-primary'}>
-                  <b>ReactJS Exercise #3</b>
+                  <BiHome size="2rem"/>
               </Navbar.Brand>
             </Link>
+            <NavbarBrand>
+                  <h4>ReactJS Exercise #3</h4>
+            </NavbarBrand>
  
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -49,7 +52,11 @@ const Header = () => {
             className={`${darkMode? 'text-dark-primary': 'text-light-primary'} d-flex align-items-center`}>
                 <BiCart size="2rem"/>
                 {!isEmpty && <span style={{ position: 'relative', left: '-21px', top: '-18px'}}>{totalItems}</span>}
-                <span style={{ marginLeft: !isEmpty ? '-13px': 0}}>Cart</span>
+            </Link>
+
+            <Link to="/controlpanel"
+            className={`${darkMode? 'text-dark-primary': 'text-light-primary'} d-flex align-items-center`}>
+                <span><BiPlus size="2rem"/></span>
             </Link>
 
             
