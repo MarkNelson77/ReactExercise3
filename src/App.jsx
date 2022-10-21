@@ -8,6 +8,7 @@ import { Router } from "@reach/router"
 //Pages...
 import Home from './Pages/Home';
 import Cart from './Pages/Cart';
+import ControPanel from './Pages/ControlPanel/ControlPanel'
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
       <Router>
         <Home  path="/" />
         <Cart path="/cart" />
+        <ControPanel path="/controlpanel" />
       </Router>
     </main>
   )
